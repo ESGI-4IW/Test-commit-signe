@@ -1,9 +1,8 @@
-language:php
+language: php
 php:
   - '5.5'
   - '7.0'
- 
 allow_failures:
   - php: 7.0
-
-script: ls
+script: 
+  - echo "Hello-world"
