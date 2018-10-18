@@ -5,7 +5,9 @@ php:
 allow_failures:
   - php: 7.0
 script: 
-  -  php php-cs-fixer-v2.phar fix . -vv --dry-run
+  -  curl -L https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o php-cs-fixer
+  -  sudo chmod a+x php-cs-fixer
+  -  php php-cs-fixer fix . -vv --dry-run
 notifications:
   email:
     - wdelenclos@gmail.com
