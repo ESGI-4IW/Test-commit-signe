@@ -9,3 +9,5 @@ script:
 notifications:
   email:
     - wdelenclos@gmail.com
+  notifications:
+    slack: esgi-iw:jMKTnfcE3dCoMIaUT3isyCbk
