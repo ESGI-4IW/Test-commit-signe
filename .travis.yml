@@ -5,7 +5,7 @@ php:
 allow_failures:
   - php: 7.0
 script: 
-  -  php php-cs-fixer-v2.phar fix dir -v --dry-run
+  -  php php-cs-fixer-v2.phar fix --dry-run
 notifications:
   email:
     - wdelenclos@gmail.com
