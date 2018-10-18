@@ -6,3 +6,6 @@ allow_failures:
   - php: 7.0
 script: 
   - echo "Hello-world"
+notifications:
+  email:
+    - wdelenclos@gmail.com
