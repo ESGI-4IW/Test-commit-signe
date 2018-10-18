@@ -11,8 +11,14 @@ script:
 notifications:
   email:
     - wdelenclos@gmail.com
-    on_success: never 
-    on_failure: always
   slack: esgi-iw:jMKTnfcE3dCoMIaUT3isyCbk
-     on_success: never 
-     on_failure: always 
+  on_success: never
+  on_failure: always
+
+deploy:
+  provider: heroku
+  api-KEY:
+    secure: deb7d3df-97ce-4301-ac55-6fcafd46ca46
+  app: apptest-12
+  on:
+    repo: ESGI-4IW/Test-commit-signe
