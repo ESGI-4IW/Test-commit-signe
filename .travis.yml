@@ -6,3 +6,4 @@ allow_failures:
   - php: 7.0
 script: 
   - echo "Hello-world"
+travis encrypt "<account>:<token>#channel" --add notifications.slack.rooms
