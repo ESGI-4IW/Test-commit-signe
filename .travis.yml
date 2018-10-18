@@ -11,7 +11,11 @@ script:
 notifications:
   email:
     - wdelenclos@gmail.com
+    on_success: never 
+    on_failure: always
   slack: esgi-iw:jMKTnfcE3dCoMIaUT3isyCbk
+     on_success: never 
+     on_failure: always
 deploy: 
   provider: heroku
   api-KEY:
