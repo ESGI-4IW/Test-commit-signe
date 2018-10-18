@@ -7,9 +7,9 @@ if (isset($_POST['ajouter'])) {
      * Vérification que tous les champs sont renseignés
      */
     if (!empty($_POST['titre']) && !empty($_POST['description'])) {
-       /**
-        * Création d'une collection en base de données
-        */
+        /**
+         * Création d'une collection en base de données
+         */
         $sRequeteSql = 'INSERT INTO collection (titre, description) '
                      . 'VALUES (' . $oConnexion->quote($_POST['titre']) . ', ' . $oConnexion->quote($_POST['description']) . ')';
         $oConnexion->query($sRequeteSql);
@@ -19,9 +19,9 @@ if (isset($_POST['ajouter'])) {
          * Envoi d'un mail de remerciement au créateur
          */
         $sContenu = "Bonjour, merci d'avoir ajouté une nouvelle collection sur le site.";
-        $sEntete = "Cc : ouvrage@darkmira.fr\r\n"; 
+        $sEntete = "Cc : ouvrage@darkmira.fr\r\n";
         
-        mail ($_POST['email'], "Ajout d'une nouvelle collection", $sContenu, $sEntete);
+        mail($_POST['email'], "Ajout d'une nouvelle collection", $sContenu, $sEntete);
 
         echo '<div class="enregistrement">L\'enregistrement a été effectué avec succès. Vous pouvez à présent créer une nouvelle collection.</div>';
     } else {
