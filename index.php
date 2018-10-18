@@ -7,7 +7,6 @@ session_start();
  */
 if ('identification' === $_GET['page']
     && isset($_SESSION['identifie']) && true === $_SESSION['identifie']) {
-
     header('Location: index.php');
 }
 
@@ -25,11 +24,11 @@ require 'include/connexion.php';
 	<body>
         <?php require 'include/menu.php'; ?>
         <div id="contenu">
-            <?php 
+            <?php
             if (!empty($_GET['page'])) :
-                include ('include/' . $_GET['page']);
+                include('include/' . $_GET['page']);
             else :
-                include ('include/collection.php');
+                include('include/collection.php');
             endif;
             ?>
         </div>

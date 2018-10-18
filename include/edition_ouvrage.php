@@ -17,7 +17,6 @@ if (isset($_POST['editer'])) {
     if (!empty($_FILES['couverture']['tmp_name'])
         && is_uploaded_file($_FILES['couverture']['tmp_name'])
         && !empty($_FILES['couverture']['name'])) {
-        
         $bUpload = (bool) move_uploaded_file($_FILES['couverture']['tmp_name'], 'couverture/' . $_FILES['couverture']['name']);
     }
         
@@ -25,13 +24,13 @@ if (isset($_POST['editer'])) {
      * Modification des informations de l'ouvrage
      * en base de données si l'upload a été effectué
      */
-     if (empty($_FILES['couverture']['tmp_name']) || true === $bUpload) {
-         $sRequeteSql = 'UPDATE ouvrage SET description = ' . $oConnexion->quote($_POST['description'])
+    if (empty($_FILES['couverture']['tmp_name']) || true === $bUpload) {
+        $sRequeteSql = 'UPDATE ouvrage SET description = ' . $oConnexion->quote($_POST['description'])
                       . (!empty($_FILES['couverture']['name']) ? ', image_couverture = ' . $oConnexion->quote($_FILES['couverture']['name']) : '')
                       . 'WHERE id=' . $oConnexion->quote($_GET['id']);
-         $oConnexion->query($sRequeteSql);
+        $oConnexion->query($sRequeteSql);
         
-         echo '<div class="enregistrement">L\'enregistrement a été effectué avec succès.</div>';
+        echo '<div class="enregistrement">L\'enregistrement a été effectué avec succès.</div>';
     } else {
         echo '<div class="erreur">Tous les champs doivent être renseignés convenablement.</div>';
     }
